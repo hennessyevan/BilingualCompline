@@ -1,0 +1,63 @@
+\setlength\parindent{0.5cm}
+\newlength{\saveparindent}
+\AtBeginDocument{\setlength{\saveparindent}{\parindent}}
+
+\newcommand\verticalspacer{\vspace{0.5\saveparindent}}
+\newcommand\verticalspacerpsalm{\vspace{0.5\saveparindent}}
+
+% -----------------------------hangingtriple-----------------------------------
+
+\newenvironment{hangingtriple}{
+  \setlength\parindent{0em} % Make new lines no indenting
+  \everypar{\setlength\hangindent{2\saveparindent}\hangafter=1} % Add hanging
+  \let\oldbreak\break % Save original \break command
+  \renewcommand{\break}{\oldbreak\hspace*{-1\saveparindent}} % Lines after \break are negatively indented from the rest of the hanging
+}{
+  \par % Put a par at the end so that everpar is called
+}
+
+% -------------------------------hangingdouble----------------------------------
+
+\newenvironment{hangingdouble}{ % This is for hymns and psalms
+  \setlength\parindent{0em} % Make new lines no indenting
+  \everypar{\setlength\hangindent{1\saveparindent}\hangafter=1} % Add hanging
+  \let\oldbreak\break % Save original \break command
+  \renewcommand{\break}{\oldbreak\hspace*{-1\saveparindent}} % Lines after \break are negatively indented from the rest of the hanging
+}{
+  \par % Put a par at the end so that everypar is called
+}
+
+% ---------------------------------hangingpsalm---------------------------------
+
+\newenvironment{hangingpsalm}{
+  \setlength\parindent{0\saveparindent} % Make new lines no indenting
+  \everypar{\setlength\hangindent{2\saveparindent}\hangafter=1} % Add hanging
+  \let\oldbreak\break % Save original \break command
+  \renewcommand{\break}{\oldbreak\hspace*{-1\saveparindent}} % Lines after \break are negatively indented from the rest of the hanging
+  \leftskip=2\saveparindent % Increase margins
+  \rightskip=2\saveparindent
+}{
+  \par % Put a par at the end so that everpar is called
+}
+
+% --------------------------------hangingdoubleversicle-------------------------
+
+\newenvironment{hangingdoubleversicle}{
+  \setlength\parindent{0em} % Make new lines no indenting
+  \everypar{\setlength\hangindent{2\saveparindent}\hangafter=1} % Add hanging
+  \let\oldbreak\break % Save original \break command
+  \renewcommand{\break}{\oldbreak\hspace*{-1\saveparindent}} % Lines after \break are negatively indented from the rest of the hanging
+}{
+  \par % Put a par at the end so that everpar is called
+}
+
+% -----------------------------hangingtripleversicle----------------------------
+
+\newenvironment{hangingtripleversicle}{
+  \setlength\parindent{0em} % Make new lines no indenting
+  \everypar{\setlength\hangindent{3\saveparindent}\hangafter=1} % Add hanging
+  \let\oldbreak\break % Save original \break command
+  \renewcommand{\break}{\oldbreak\hspace*{-1\saveparindent}} % Lines after \break are negatively indented from the rest of the hanging
+}{
+  \par % Put a par at the end so that everpar is called
+}

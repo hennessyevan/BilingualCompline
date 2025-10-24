@@ -1,0 +1,36 @@
+\usepackage[autocompile]{gregoriotex}
+
+%%% This function is used at the end of a function which inserts text.  It checks to see if a space should be included at the end of the command, suppressing it if the command is immediately followed by a punctuation character but including it otherwise.
+\makeatletter
+\newcommand{\punctuationcheck}{%
+	\@ifnextchar){\relax}{%
+	\@ifnextchar]{\relax}{%
+	\@ifnextchar.{\relax}{%
+	\@ifnextchar,{\relax}{%
+	\@ifnextchar’{\relax}{\ }}}}}%
+}
+\renewcommand\@seccntformat[1]{}
+\makeatother
+
+% \gresethyphen{force} % This makes every syllable hyphenated. I don't want this
+
+\grechangestyle{annotation}{\scshape\bfseries\footnotesize}
+
+\grechangestyle{initial}{\fontsize{28}{28}\selectfont}
+
+\def\move{\rule[-0.2em]{0.4pt}{1em}\,}
+
+% Make music smaller
+\grechangestaffsize{12}
+\grechangedim{baselineskip}{44pt}{scalable}
+\grechangedim{translationheight}{0.45cm}{scalable}
+
+% Define colours
+\definecolor{gregoriocolor}{RGB}{209, 36, 47} % used with \GreColored{...}
+% \usepackage{xcolor} is already done by gregoriotex
+\definecolor{black}{RGB}{0, 0, 0} % used with \textcolor{black}{...}
+
+% Make versicle and response always upright with some space
+\newcommand{\VbarT}{\textup{\GreColored{\Vbar.}}\enspace}
+\newcommand{\RbarT}{\textup{\GreColored{\Rbar.}}\enspace}
+

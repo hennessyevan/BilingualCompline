@@ -1,0 +1,331 @@
+\usepackage{HangingStyles}
+
+\usepackage{xparse}
+\usepackage{multicol}
+\usepackage{setspace}
+
+\newlength{\musiclyricsspace}
+\setlength\musiclyricsspace{0.70em}
+
+\usepackage{paracol}
+\newcommand\columnratiotext{0.5}
+\newcommand\columnratiomusic{0.72}
+
+% -----------------------------bihangingtriple----------------------------------
+ 
+\newcommand{\bihangingtriple}[2]{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\begin{hangingtriple}
+#1
+\end{hangingtriple}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\begin{hangingtriple}
+\textit{#2}
+\end{hangingtriple}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% -----------------------------bihangingpsalm-----------------------------------
+ 
+\newcommand{\bihangingpsalm}[2]{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\begin{hangingpsalm}
+#1
+\end{hangingpsalm}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\begin{hangingpsalm}
+#2
+\end{hangingpsalm}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% -------------------------------bihangingtripleversicle------------------------
+ 
+\newcommand{\bihangingtripleversicle}[2]{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\begin{hangingtripleversicle}
+#1
+\end{hangingtripleversicle}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\begin{hangingtripleversicle}
+\textit{#2}
+\end{hangingtripleversicle}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% ----------------------------------bireading-----------------------------------
+ 
+\newcommand{\bireading}[2]{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+#1
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+#2
+\end{rightcolumn}
+\end{paracol}
+}
+
+% ----------------------------------bisentence-----------------------------------
+ 
+\newcommand{\bisentence}[2]{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\vspace{-0.15cm}
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\center
+\itshape
+\GreColored{#1}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\center
+\itshape
+\GreColored{#2}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% -------------------------------biinstruction----------------------------------
+ 
+\newcommand{\biinstruction}[2]{
+  \bireading{\itshape\GreColored{#1}}{\itshape\GreColored{#2}}
+}
+
+
+% ---------------------------------chantlabel-----------------------------------
+ 
+% Give a little heading, e.g. for the occasion (In memoriis, in festic, etc)
+\newcommand{\chantlabel}[1]{
+\vspace{0.20cm}
+\noindent{\textit{\GreColored{#1}}}
+\vspace{-0.10cm}
+}
+
+% -------------------------------chantlabelenglish------------------------------
+ 
+\newcommand{\chantlabelenglish}[1]{
+\chantlabel{\small#1}
+}
+
+% --------------------------------bimusicequal----------------------------------
+ 
+\NewDocumentCommand\bimusicequal{o o +m +m}{
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\IfValueT{#1}{\chantlabel{#1}
+
+}
+  #3
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\IfValueT{#2}{\chantlabelenglish{#2}
+
+}
+  #4
+\end{rightcolumn}
+\end{paracol}
+}
+
+% ---------------------------------bimusic--------------------------------------
+ 
+\NewDocumentCommand\bimusic{o o +m +m}{
+\setlength{\columnsep}{1.0em}
+\columnratio{\columnratiomusic}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\IfValueT{#1}{\chantlabel{#1}
+
+}
+  #3
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\IfValueT{#2}{\chantlabelenglish{#2}
+
+}
+{\vspace{\musiclyricsspace}\small\itshape\parindent0pt#4}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% ------------------------------bimusichangingdouble----------------------------
+ 
+\NewDocumentCommand\bimusichangingdouble{o o +m +m}{
+\setlength{\columnsep}{1.0em}
+\columnratio{\columnratiomusic}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\IfValueT{#1}{\chantlabel{#1}
+
+}
+#3
+
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\IfValueT{#2}{\chantlabelenglish{#2}
+
+}
+\vspace{\musiclyricsspace}
+\begin{hangingdouble}
+{\small\itshape#4
+
+}
+\end{hangingdouble}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% ---------------------------bimusichangingdoubleversicle-----------------------
+
+% This is so that the initial letter is not big (it is 
+% a VBar (V/). This must be restored to its default (1).
+\NewDocumentCommand\bimusichangingdoubleversicle{o o +m +m}{
+\setlength{\columnsep}{1.0em}
+\columnratio{\columnratiomusic}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\IfValueT{#1}{\chantlabel{#1}
+
+}
+  \gresetinitiallines{0}#3\gresetinitiallines{1}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\IfValueT{#2}{\chantlabelenglish{#2}
+
+}
+\vspace{\musiclyricsspace}
+\begin{hangingdoubleversicle}
+  {\small\itshape#4}
+\end{hangingdoubleversicle}
+\end{rightcolumn}
+\end{paracol}
+}
+
+% --------------------------------firstlinetranslation--------------------------
+ 
+% Give the first line translation for a hymn
+\newcommand{\firstlinetranslation}[1]{
+  \vspace{0.25cm}
+  \textit{\centering #1\\}
+}
+
+% ------------------------------------------------------------------------------
+ 
+% % Four column layout for hymn verses when there are multiple settings, e.g.
+% % Te lucis ante terminum for compline
+% \newcommand{\quadhangingdouble}[4]{
+% \vspace{-0.25cm}
+% \begin{multicols}{4}
+% \begin{hangingdouble}
+% #1
+%
+% \columnbreak % This command is used for breaking columns in a predictable manner.
+% #2
+%
+% \columnbreak
+% \small\setstretch{1.10}
+% \textit{#3}
+%
+% \columnbreak
+% \textit{#4}
+%
+% \end{hangingdouble}
+% \end{multicols}
+% \vspace{-0.75cm}
+% }
+
+% -------------------------------quadhangingdouble----------------------------
+ 
+% Four column layout for hymn verses when there are multiple settings, e.g.
+% Te lucis ante terminum for compline
+\newcommand{\quadhangingdouble}[4]{
+\vspace{-0.50cm}
+\setlength{\columnsep}{\saveparindent}
+\columnratio{\columnratiotext}
+% \twosided
+\begin{paracol}{2}
+\begin{leftcolumn}
+\selectlanguage{latin}
+\begin{multicols}{2}
+\begin{hangingdouble}
+#1
+
+\columnbreak % This command is used for breaking columns in a predictable manner.
+#2
+
+\end{hangingdouble}
+\end{multicols}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+\selectlanguage{english}
+\begin{multicols}{2}
+\begin{hangingdouble}
+{\small\setstretch{1.10}
+\textit{#3}
+
+\columnbreak % This command is used for breaking columns in a predictable manner.
+\textit{#4}
+
+}
+\end{hangingdouble}
+\end{multicols}
+\end{rightcolumn}
+\end{paracol}
+\vspace{-0.75cm}
+}
