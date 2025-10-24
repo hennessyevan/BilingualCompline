@@ -4,7 +4,7 @@ centering-scheme: latin;
 user-notes: Psalm 134.;
 annotation: d d.;
 %%
-(c4)EC(g)ce(fg) be(g)ne(g)dí(g)ci(g)te(g) Dó(g)mi(g)num,(g) om(g)nes(g) <i>ser</i>(f)<i>vi</i>(g) <b>Dó</b>(h)mi(gr)ni,(g) (:z) <v>\greheightstar</v>() qui(g) sta(g)tis(g) in(g) do(g)mo(g) Dó(g)<i>mi</i>(f)<i>ni</i>(g) <i>per</i>(h) <b>noc</b>(f dr)tes.(d) (::)
+(c4)EC(g)ce(fg) be(g)ne(g)dí(g)ci(g)te(g) Dó(g)mi(g)num,(g) om(g)nes(g) <i>ser</i>(f)<i>vi</i>(g) <b>Dó</b>(h)mi(gr)ni,(g) (:z) <c><v>\greheightstar</v></c>() qui(g) sta(g)tis(g) in(g) do(g)mo(g) Dó(g)<i>mi</i>(f)<i>ni</i>(g) <i>per</i>(h) <b>noc</b>(f dr)tes.(d) (::)
 
 
 %E(g) u(f) o(g) u(h) a(f) e.(d) (::)
