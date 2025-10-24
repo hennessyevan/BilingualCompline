@@ -10,9 +10,10 @@
 
 % This restyles titles, e.g. to remove numbers, centre them, etc.
 \usepackage{titlesec}
-\newcommand{\formattitle}[1]{\xrfill[0.5ex]{0.4pt}\hspace{0.5cm}\MakeLowercase{#1}\hspace{0.5cm}\xrfill[0.5ex]{0.4pt}}
-\titleformat{\section}[block] {\LARGE\scshape} {} {0em} {\formattitle}
-\titleformat{\subsection} {} {} {0em} { \large\scshape\centering\GreColored }
+\newcommand{\formatsection}[1]{\xrfill[0.5ex]{0.4pt}\hspace{0.5cm}\MakeLowercase{#1}\hspace{0.5cm}\xrfill[0.5ex]{0.4pt}}
+\titleformat{\section}[block] {\LARGE\scshape} {} {0em} {\formatsection}
+\newcommand{\formatsubsection}[1]{\xrfill[0.5ex]{0.4pt}[gregoriocolor]\hspace{0.5cm}{\large\scshape\centering\GreColored{#1}}\hspace{0.5cm}\xrfill[0.5ex]{0.4pt}[gregoriocolor]}
+\titleformat{\subsection} {} {} {0em} { \formatsubsection }
 \titleformat{\subsubsection} {} {} {0em} { \bfseries\scshape\centering\GreColored }
 
 \newcommand{\sectionlinetwo}[1]{\vspace{-0.25cm}
@@ -31,6 +32,13 @@
 \end{center}
 }
 \newcommand{\bisubsection}[2]{\subsection{#1}
+  \subsectionlinetwo{#2}
+  \vspace{-0.25cm}
+}
+\newcommand{\bisubsectionnoline}[2]{
+  \titleformat{\subsection} {} {} {0em} { \large\scshape\centering\GreColored }
+  \subsection{#1}
+  \titleformat{\subsection} {} {} {0em} { \formatsubsection }
   \subsectionlinetwo{#2}
   \vspace{-0.25cm}
 }
