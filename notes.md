@@ -1,2 +1,1 @@
-- Marian Antiphons from AMII
 - Responsories from ARI, ARII
