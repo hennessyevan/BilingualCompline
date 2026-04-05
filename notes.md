@@ -1,6 +1,0 @@
-- [x] ae -> oe
-- [x] w -> !_w
-- [x] e -> *e*
-- [x] Space on p. 6 (Sunday II)
-- [x] Haec dies
-- [x] æ -> ǽ 
