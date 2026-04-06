@@ -20,7 +20,7 @@ While the final PDF is quite clean, the files used to make it could be more eleg
 - The GABC files use `!` before every quilisma to remove the gap.
 - The hymns take the full line because of a hand-coded space (e.g. `(::\[10])`).
 - Not all GABC files have all the headers filled-in.
-- Some of the indenting in the translations is hand-done by `hspace*` commands.
+- Some of the indenting in the translations is hand-done by `\hspace*` commands.
 - The file structure is not very nice.
 
 I am hoping that by sharing both the final PDFs and the working files, people will be able to sing to God and that He may be glorified by their voices, and that others might use the files for a similar purpose, such as replacing the English with other languages, as they see fit.
