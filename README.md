@@ -10,7 +10,7 @@ There are two PDFs: one A4, and the other A3. The A3 has two A4 pages per A3 pag
 
 The texts from the current Latin and English books, as of 2026. The English translations of the hymns are from [Universalis](https://universalis.com/index.htm).
 
-The Gregorian chant is taken principally from Joerg Hudelmaier's compilation of chants for the 2015 Ordo Cantus Officii (OCO), which can be found at www.antiphonale.net/, or in [PDF](www.antiphonale.net/oco.pdf). Other pieces where compiled from his [Easter chants PDF](https://antiphonale.net/OCO/DeTempore/Paschali/Libellus.pdf), from Steven van Roode's [*Ad Completorium*](https://www.kleingraduale.nl/LiturgiaHorarum/), and from the 2009 Antiphonale Romanum and 2005 Antiphonale Monasticum from the monks of Solesmes. God bless these men.
+The Gregorian chant is taken principally from Joerg Hudelmaier's compilation of chants for the 2015 Ordo Cantus Officii (OCO), which can be found at [www.antiphonale.net/](www.antiphonale.net/), or in [PDF](www.antiphonale.net/oco.pdf). Other pieces where compiled from his [Easter chants PDF](https://antiphonale.net/OCO/DeTempore/Paschali/Libellus.pdf), from Steven van Roode's [*Ad Completorium*](https://www.kleingraduale.nl/LiturgiaHorarum/), and from the 2009 Antiphonale Romanum and 2005 Antiphonale Monasticum from the monks of Solesmes. God bless these men.
 
 While the final PDF is quite clean, the files used to make it could be more elegant:
 
