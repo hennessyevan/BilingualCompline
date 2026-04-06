@@ -21,3 +21,16 @@ While the final PDF is quite clean, the files used to make it could be more eleg
 - The file structure is not very nice.
 
 I am hoping that by sharing both the final PDFs and the working files, people will be able to sing to God and that He may be glorified by their voices, and that others might use the files for a similar purpose, such as replacing the English with other languages, as they see fit.
+
+## Compiling
+
+This project uses [GregorioTex](https://gregorio-project.github.io/gregoriotex/index.html). Instructions for installation can be found here: [GregorioTex installation instructions](https://gregorio-project.github.io/installation.html) (this assumes a TEX distribution with Lualatex, as the page explains).
+
+Then, having cloned this repository, in the command line, navigate to the directory containing this `README.md` file, then run the following commands:
+
+```sh
+cd FullBook
+lualatex Compline.tex
+```
+
+You may need to re-run the last command for the links to other pages to work.
