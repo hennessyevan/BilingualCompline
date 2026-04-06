@@ -1,6 +1,6 @@
 # Latin-English Compline Chant-Booklet
 
-This is an A4 booklet for Compline (Latin: *Ad Completorium*) according to the 1971 *Liturgia Horarum*. It has Latin and English side-by-side.
+This is an A4 booklet for Compline (Latin: *Ad Completorium*) according to the 1971 *Liturgia Horarum*. It has Latin and English side-by-side. See the Releases page for the PDFs themselves.
 
 Compline, also called Night Prayer, is the final Hour of the Liturgy of the Hours (Latin: *Liturgia Horarum*), which is sung before retiring at night.
 
