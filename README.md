@@ -12,7 +12,7 @@ There are two PDFs (both found in [Releases](https://codeberg.org/JeremyCains/Bi
 
 The texts are from the current Latin and English books, as of 2026. The English translations of the hymns are from [Universalis](https://universalis.com/index.htm).
 
-The Gregorian chant is taken principally from Joerg Hudelmaier's compilation of chants for the 2015 Ordo Cantus Officii (OCO), which can be found at [www.antiphonale.net/](https://www.antiphonale.net/), or in [PDF](https://www.antiphonale.net/oco.pdf). Other pieces where compiled from his [Easter chants PDF](https://antiphonale.net/OCO/DeTempore/Paschali/Libellus.pdf), from Steven van Roode's [*Ad Completorium*](https://www.kleingraduale.nl/LiturgiaHorarum/), and from the 2009 *Antiphonale Romanum II* and 2005 *Antiphonale Monasticum* from the monks of Solesmes. God bless these men.
+The Gregorian chant is taken principally from Joerg Hudelmaier's compilation of chants for the 2015 Ordo Cantus Officii (OCO), which can be found at [www.antiphonale.net/](https://www.antiphonale.net/), or in [PDF](https://www.antiphonale.net/oco.pdf). Other pieces where compiled from his [Easter chants PDF](https://antiphonale.net/OCO/DeTempore/Paschali/Libellus.pdf), from Steven van Roode's [*Ad Completorium*](https://www.kleingraduale.nl/LiturgiaHorarum/), and from the 2009 *Antiphonale Romanum II* and 2005 *Antiphonale Monasticum* from the monks of Solesmes. I must also thank Benjamin Bloomfield for his chant tools, and the people behind the Gregorio project. God bless these men.
 
 While the final PDF is quite clean, the files used to make it could be more elegant:
 
@@ -21,7 +21,7 @@ While the final PDF is quite clean, the files used to make it could be more eleg
 - The hymns take the full line because of a hand-coded space (e.g. `(::\[10])`).
 - Not all GABC files have all the headers filled-in.
 - Some of the indenting in the translations is hand-done by `\hspace*` commands.
-- The file structure is not very nice.
+- The file structure/naming is not very nice.
 
 I am hoping that by sharing both the final PDFs and the working files, people will be able to sing to God and that He may be glorified by their voices, and that others might use the files for a similar purpose, such as replacing the English with other languages, as they see fit.
 
