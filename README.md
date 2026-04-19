@@ -37,3 +37,5 @@ lualatex Compline.tex
 ```
 
 You may need to re-run the last command for the links to other pages to work.
+
+Compiling is pretty slow. On my relatively fast machine, it takes a couple minutes.
