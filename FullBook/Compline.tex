@@ -21,6 +21,12 @@
 
 \input{02Hymns.tex}
 
+% \newpage
+
+\input{./16Friday.tex}
+
+% Friday only: general psalmody instructions and day index not needed.
+\iffalse
 \bisubsection{Psalmodia et Lectio brevis}{Psalmody and Short reading}
 
 % I am using \bireading instead of \biinstruction because the \GreColored 
@@ -65,31 +71,21 @@
 \noindent\GreColored{Thursday \dotfill \pageref{Thursday}}
 
 \noindent\GreColored{Friday \dotfill \pageref{Friday}}}
+\fi
 
 \input{03ResponsoriumBreve.tex}
 
-\newpage
+% \newpage
 
+% Keeps the dismissal from spilling a single line onto the next page.
+\enlargethispage{3\baselineskip}
 \bisubsection{Canticum envangelicum \textemdash{} Christus lumen gentium et gloria Israel}{Gospel canticle \textemdash{} Christ is the light of the nations and the glory of Israel}\pdfbookmark[section]{Canticum envangelicum}{canticum-envangelicum}
 \vspace{-0.10cm}
 
 \bimusic{\gregorioscore{../NuncDimittis/11231-an--salva_nos_domine--verona,H0-7CN.gabc}}{\GreColored{Ant.} Save us, Lord, while we are awake; protect us while we sleep; that we may keep watch with Christ and rest with him in peace,\\
 \GreColored{(E. T. }alleluia\GreColored{)}.}
 
-\bimusichangingdouble{\gregorioscore{../NuncDimittis/Nunc-dimittis-3a.gabc}}{At last, \GreColored{\grecross}\, all-powerful Master,\\
-you give leave to your servant\\
-to go in peace, according to your promise.\\
-
-For my eyes have seen your salvation\\
-which you have prepared for all nations,\\
-the light to enlighten the Gentiles\\
-and give glory to Israel, your people.\\
-
-Glory be to the Father and to the Son\\
-and to the Holy Spirit.\\
-As it was in the beginning,\\
-is now, and ever shall be,\\
-world without end. Amen.}
+\binuncdimittis{3a}
 
 \bimusic{\gregorioscore{../NuncDimittis/11231-an--salva_nos_domine--verona,H0-7CN.gabc}}{\GreColored{Ant.} Save us, Lord, while we are awake; protect us while we sleep; that we may keep watch with Christ and rest with him in peace,\\
 \GreColored{(E. T. }alleluia\GreColored{)}.}
@@ -104,17 +100,17 @@ world without end. Amen.}
 \vspace{-0.20cm}
 
 \gresetinitiallines{0}
-\bimusicequal[Post I Vesperas dominicæ:][After 1st Vespers of Sundays:]{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-7.gabc}}{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-7-en.gabc}}
-\vspace{-0.05cm}
-\bimusicequal[Post II Vesperas dominicæ et per octavam Paschae:][After 2nd Vespers of Sundays and in the Easter octave:]{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-0.gabc}}{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-0-en.gabc}}
-\bimusicequal[Post I et II Vesperas sollemnitatum extra dominicam occurentium:][After 1st and 2nd Vespers of Solemnities occurring outside Sunday:]{\gregorioscore{../Prayers/Prayer-1.gabc}}{\gregorioscore{../Prayers/Prayer-1-en.gabc}}
-\bimusicequal[Feria II:][Monday:]{\gregorioscore{../Prayers/Prayer-2.gabc}}{\gregorioscore{../Prayers/Prayer-2-en.gabc}}
-\bimusicequal[Feria III:][Tuesday:]{\gregorioscore{../Prayers/Prayer-3.gabc}}{\gregorioscore{../Prayers/Prayer-3-en.gabc}}
-\newpage
-\bimusicequal[Feria IV:][Wednesday:]{\gregorioscore{../Prayers/Prayer-4.gabc}}{\gregorioscore{../Prayers/Prayer-4-en.gabc}}
-\vspace{-0.05cm}
-\bimusicequal[Feria V:][Thursday:]{\gregorioscore{../Prayers/Prayer-5.gabc}}{\gregorioscore{../Prayers/Prayer-5-en.gabc}}
-\vspace{-0.05cm}
+% \bimusicequal[Post I Vesperas dominicæ:][After 1st Vespers of Sundays:]{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-7.gabc}}{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-7-en.gabc}}
+% \vspace{-0.05cm}
+% \bimusicequal[Post II Vesperas dominicæ et per octavam Paschae:][After 2nd Vespers of Sundays and in the Easter octave:]{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-0.gabc}}{\vspace{-0.05cm}\gregorioscore{../Prayers/Prayer-0-en.gabc}}
+% \bimusicequal[Post I et II Vesperas sollemnitatum extra dominicam occurentium:][After 1st and 2nd Vespers of Solemnities occurring outside Sunday:]{\gregorioscore{../Prayers/Prayer-1.gabc}}{\gregorioscore{../Prayers/Prayer-1-en.gabc}}
+% \bimusicequal[Feria II:][Monday:]{\gregorioscore{../Prayers/Prayer-2.gabc}}{\gregorioscore{../Prayers/Prayer-2-en.gabc}}
+% \bimusicequal[Feria III:][Tuesday:]{\gregorioscore{../Prayers/Prayer-3.gabc}}{\gregorioscore{../Prayers/Prayer-3-en.gabc}}
+% \newpage
+% \bimusicequal[Feria IV:][Wednesday:]{\gregorioscore{../Prayers/Prayer-4.gabc}}{\gregorioscore{../Prayers/Prayer-4-en.gabc}}
+% \vspace{-0.05cm}
+% \bimusicequal[Feria V:][Thursday:]{\gregorioscore{../Prayers/Prayer-5.gabc}}{\gregorioscore{../Prayers/Prayer-5-en.gabc}}
+% \vspace{-0.05cm}
 \bimusicequal[Feria VI:][Friday:]{\gregorioscore{../Prayers/Prayer-6.gabc}}{\gregorioscore{../Prayers/Prayer-6-en.gabc}}
 
 \vspace{-0.25cm}
@@ -128,6 +124,8 @@ world without end. Amen.}
 
 \input{04MarianAntiphon.tex}
 
+% Friday only: Friday psalmody is input after the hymns above.
+\iffalse
 \newpage
 
 \begin{center}
@@ -157,8 +155,7 @@ world without end. Amen.}
 \input{./14Wednesday.tex}
 
 \input{./15Thursday.tex}
-
-\input{./16Friday.tex}
+\fi
 
 \input{05Appendix.tex}
 

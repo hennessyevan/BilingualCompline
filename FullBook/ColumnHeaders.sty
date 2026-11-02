@@ -148,115 +148,106 @@
 \chantlabel{\small#1}
 }
 
+% ------------------------------------birow-------------------------------------
+
+% One unbreakable row: Latin and English stay on the same page, tops aligned.
+% #1 left width as a fraction of \linewidth, #2 gap, #3 Latin, #4 English.
+\newlength{\birowleftwidth}
+\newcommand{\birow}[4]{%
+\par\noindent
+\setlength{\birowleftwidth}{\dimexpr#1\linewidth-#2/2\relax}%
+\begin{minipage}[t]{\birowleftwidth}\vspace{0pt}\selectlanguage{latin}#3\end{minipage}%
+\hspace{#2}%
+\begin{minipage}[t]{\dimexpr\linewidth-\birowleftwidth-#2\relax}\vspace{0pt}\selectlanguage{english}#4\end{minipage}%
+\par\smallskip
+}
+
+\newcommand{\birowmusic}[2]{\birow{\columnratiomusic}{1.0em}{#1}{#2}}
+
 % --------------------------------bimusicequal----------------------------------
  
 \NewDocumentCommand\bimusicequal{o o +m +m}{
-\setlength{\columnsep}{\saveparindent}
-\columnratio{\columnratiotext}
-% \twosided
-\begin{paracol}{2}
-\begin{leftcolumn}
-\selectlanguage{latin}
-\IfValueT{#1}{\chantlabel{#1}
-
-}
-  #3
-\end{leftcolumn}
-
-\begin{rightcolumn}
-\selectlanguage{english}
-\IfValueT{#2}{\chantlabelenglish{#2}
-
-}
-  #4
-\end{rightcolumn}
-\end{paracol}
+\birow{\columnratiotext}{\saveparindent}
+{\IfValueT{#1}{\chantlabel{#1}\par}#3}
+{\IfValueT{#2}{\chantlabelenglish{#2}\par}#4}
 }
 
 % ---------------------------------bimusic--------------------------------------
  
 \NewDocumentCommand\bimusic{o o +m +m}{
-\setlength{\columnsep}{1.0em}
-\columnratio{\columnratiomusic}
-% \twosided
-\begin{paracol}{2}
-\begin{leftcolumn}
-\selectlanguage{latin}
-\IfValueT{#1}{\chantlabel{#1}
-
-}
-  #3
-\end{leftcolumn}
-
-\begin{rightcolumn}
-\selectlanguage{english}
-\IfValueT{#2}{\chantlabelenglish{#2}
-
-}
-{\vspace{\musiclyricsspace}\small\itshape\parindent0pt#4}
-\end{rightcolumn}
-\end{paracol}
+\birowmusic
+{\IfValueT{#1}{\chantlabel{#1}\par}#3}
+{\IfValueT{#2}{\chantlabelenglish{#2}\par}{\vspace{\musiclyricsspace}\small\itshape\parindent0pt#4\par}}
 }
 
 % ------------------------------bimusichangingdouble----------------------------
- 
-\NewDocumentCommand\bimusichangingdouble{o o +m +m}{
-\setlength{\columnsep}{1.0em}
-\columnratio{\columnratiomusic}
-% \twosided
-\begin{paracol}{2}
-\begin{leftcolumn}
-\selectlanguage{latin}
-\IfValueT{#1}{\chantlabel{#1}
 
-}
-#3
-
-\end{leftcolumn}
-
-\begin{rightcolumn}
-\selectlanguage{english}
-\IfValueT{#2}{\chantlabelenglish{#2}
-
-}
+\newcommand{\bihangingstanza}[1]{%
 \vspace{\musiclyricsspace}
 \begin{hangingdouble}
-{\small\itshape#4
-
-}
+{\small\itshape#1\par}
 \end{hangingdouble}
-\end{rightcolumn}
-\end{paracol}
+}
+ 
+\NewDocumentCommand\bimusichangingdouble{o o +m +m}{
+\birowmusic
+{\IfValueT{#1}{\chantlabel{#1}\par}#3}
+{\IfValueT{#2}{\chantlabelenglish{#2}\par}\bihangingstanza{#4}}
+}
+
+% --------------------------------binuncdimittis--------------------------------
+
+% #1 is the tone suffix of ../NuncDimittis/Nunc-dimittis-<tone>-{1,2,3}.gabc.
+% One row per stanza so a page break can only fall between stanzas.
+\newcommand{\binuncdimittis}[1]{
+\birowmusic{\gregorioscore{../NuncDimittis/Nunc-dimittis-#1-1.gabc}}
+{\bihangingstanza{At last, \GreColored{\grecross}\, all-powerful Master,\\
+you give leave to your servant\\
+to go in peace, according to your promise.}}
+\birowmusic{\gresetinitiallines{0}\gregorioscore{../NuncDimittis/Nunc-dimittis-#1-2.gabc}\gresetinitiallines{1}}
+{\bihangingstanza{For my eyes have seen your salvation\\
+which you have prepared for all nations,\\
+the light to enlighten the Gentiles\\
+and give glory to Israel, your people.}}
+\birowmusic{\gresetinitiallines{0}\gregorioscore{../NuncDimittis/Nunc-dimittis-#1-3.gabc}\gresetinitiallines{1}}
+{\bihangingstanza{Glory be to the Father and to the Son\\
+and to the Holy Spirit.\\
+As it was in the beginning,\\
+is now, and ever shall be,\\
+world without end. Amen.}}
 }
 
 % ---------------------------bimusichangingdoubleversicle-----------------------
 
 % This is so that the initial letter is not big (it is 
 % a VBar (V/). This must be restored to its default (1).
-\NewDocumentCommand\bimusichangingdoubleversicle{o o +m +m}{
-\setlength{\columnsep}{1.0em}
-\columnratio{\columnratiomusic}
-% \twosided
-\begin{paracol}{2}
-\begin{leftcolumn}
-\selectlanguage{latin}
-\IfValueT{#1}{\chantlabel{#1}
-
-}
-  \gresetinitiallines{0}#3\gresetinitiallines{1}
-\end{leftcolumn}
-
-\begin{rightcolumn}
-\selectlanguage{english}
-\IfValueT{#2}{\chantlabelenglish{#2}
-
-}
+\newcommand{\biversiclestanza}[1]{%
 \vspace{\musiclyricsspace}
 \begin{hangingdoubleversicle}
-  {\small\itshape#4}
+  {\small\itshape#1\par}
 \end{hangingdoubleversicle}
-\end{rightcolumn}
-\end{paracol}
+}
+
+\NewDocumentCommand\bimusichangingdoubleversicle{o o +m +m}{
+\birowmusic
+{\IfValueT{#1}{\chantlabel{#1}\par}\gresetinitiallines{0}#3\gresetinitiallines{1}}
+{\IfValueT{#2}{\chantlabelenglish{#2}\par}\biversiclestanza{#4}}
+}
+
+% -----------------------------biresponsory-------------------------------------
+
+% #3 is the prefix of ../Responsories/<prefix>-{1,2,3}.gabc; #4-#6 the English
+% for each line, one row per line so pages only break between versicles.
+\NewDocumentCommand\biresponsory{o o m +m +m +m}{
+\birowmusic
+{\IfValueT{#1}{\chantlabel{#1}\par}\gresetinitiallines{0}\gregorioscore{../Responsories/#3-1.gabc}\gresetinitiallines{1}}
+{\IfValueT{#2}{\chantlabelenglish{#2}\par}\biversiclestanza{#4}}
+\birowmusic
+{\gresetinitiallines{0}\gregorioscore{../Responsories/#3-2.gabc}\gresetinitiallines{1}}
+{\biversiclestanza{#5}}
+\birowmusic
+{\gresetinitiallines{0}\gregorioscore{../Responsories/#3-3.gabc}\gresetinitiallines{1}}
+{\biversiclestanza{#6}}
 }
 
 % --------------------------------firstlinetranslation--------------------------
